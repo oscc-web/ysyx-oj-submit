@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 TOKEN="xxx"
 PROBLEM_ID="xxx"
 
