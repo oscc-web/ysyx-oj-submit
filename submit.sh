@@ -31,7 +31,7 @@ echo "远程地址: $URL"
 echo "返回结果："
 
 if [ "$GET" = true ]; then
-    curl http://$URL:10140/api/getProblemId
+    curl http://$URL:10140/api/getProblemData?type=brief
 else
     tar -cf "$FILE" --exclude=".git" --exclude="submit.sh" "./"
 
