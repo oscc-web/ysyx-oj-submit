@@ -38,5 +38,3 @@ else
         -F "upload=@$FILE" \
         http://$URL:10140/api/uploadFileByScript
 fi
-
-
