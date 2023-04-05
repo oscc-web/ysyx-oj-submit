@@ -1,4 +1,3 @@
-
 TOKEN="xxx"
 PROBLEM_ID="xxx"
 
