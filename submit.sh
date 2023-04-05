@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-TOKEN="xxx"
-PROBLEM_ID="xxx"
+TOKEN=""
+PROBLEM_ID=""
 
 # 不要编辑以下内容
 FILE="/tmp/upload.tar.bz2"
@@ -33,10 +33,13 @@ echo "返回结果："
 if [ "$GET" = true ]; then
     curl http://$URL:10140/api/getProblemData?type=brief
 else
-    tar -cf "$FILE" --exclude=".git" --exclude="submit.sh" "./"
+    tar -cf "$FILE" --exclude=".git" \
+                    --exclude="submit.sh" \
+                    --exclude="LICENSE" \
+                    --exclude="README*" "./"
 
     curl -F "token=$TOKEN" \
-        -F "problemId=$PROBLEM_ID" \
-        -F "upload=@$FILE" \
+         -F "problemId=$PROBLEM_ID" \
+         -F "upload=@$FILE" \
         http://$URL:10140/api/uploadFileByScript
 fi
